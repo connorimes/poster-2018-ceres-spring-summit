@@ -156,6 +156,7 @@ tick label style={font=\small},
 \newcommand{\function}[1]{\mbox{\texttt{#1}}}
 \newcommand{\struct}[1]{\emph{#1}}
 \newcommand{\variable}[1]{\emph{#1}}
+\newcommand{\pc}[1]{\mbox{\texttt{#1}}}
 
 \newcommand{\PAD}{\vskip 0.75cm}
 
@@ -299,7 +300,7 @@ As applications move through \emph{phases}, the predictions change accordingly.
 \section*{Challenges}
 
 {
-\PAD
+% \PAD
   \centering
   \includegraphics[]{figures/training_space_noclassifier.pdf}
   \includegraphics[]{figures/training_space_svm_kern_lin.pdf}
@@ -309,10 +310,12 @@ As applications move through \emph{phases}, the predictions change accordingly.
 \PAD
 }
 
-Training data is collected from characterizations of smaller HPC applications like the NAS Parallel Benchmarks, Co-design benchmarks, and proxy applications.
-\textbf{Principal Component Analysis} determines which \textbf{features} are most relevant to energy efficiency---DRAM power, instructions per nominal CPU cycle (EXEC), L2/L3 cache hit/miss rates, and relative frequency excluding sleep time (AFREQ) are among the most useful.
-The feature space is complex---no obvious mapping for determining the most energy-efficient state exists, even considering only the top two performance counters (POWER\_DRAM and EXEC).
-Simple classifiers are not up to the task, \eg a Linear Support Vector Machine (SVM).
+Training data is collected from characterizations of smaller HPC applications, \eg NAS Parallel Benchmarks, Co-design benchmarks, and proxy applications.
+Our evaluation system produces 88 data points for each training application (1 per configuration)---all 88 are labeled using the most energy-efficient configuration for that application.
+\textbf{Principal Component Analysis} determines which \textbf{features} are most relevant to energy efficiency---\pc{POWER\_DRAM} and \pc{EXEC} are the most useful.
+
+The feature space is complex---no obvious mapping for determining the most energy-efficient state exists, even considering only the top two performance counters.
+Simple classifiers are not up to the task, \eg a Linear Support Vector Machine (SVM) recalls less than half of the training data.
 A SVM with a RBF kernel performs better.
 
 
