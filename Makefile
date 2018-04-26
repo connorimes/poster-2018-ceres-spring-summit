@@ -9,7 +9,7 @@ FIG-FILES = figures/*.png img/*.tex
 TEX-FILES = *.tex
 BIB-FILES = *.bib
 TOP-LEVEL-ROOT = poster
-CRNAME = imes-ceres-summit-spring-2018
+CRNAME = imes-gcasr-2018
 
 all: ${TOP-LEVEL-ROOT}.pdf $(CRNAME)
 

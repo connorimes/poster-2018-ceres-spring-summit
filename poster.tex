@@ -181,10 +181,10 @@ tick label style={font=\small},
 \begin{minipage}[b]{\linewidth}
 \begin{center}
 \includegraphics[height=5cm]{figures/uchicago_logo.png} %[width=20cm]
-\hspace{18cm}
+\hspace{42cm}
 \includegraphics[height=5cm]{figures/lbnl_logo.png}
-\hspace{18cm}
-\includegraphics[height=5cm]{figures/ceres-logo.png}\\
+% \hspace{18cm}
+% \includegraphics[height=5cm]{figures/ceres-logo.png}\\
 \vspace{0.25cm}
 \noindent\makebox[\linewidth]{\rule{0.9\paperwidth}{0.4pt}}
 \vspace{0.25cm}
@@ -337,7 +337,7 @@ We test five of the most promising classifiers: Extra Trees (ET), Gradient Boost
 }
 
 \figref{compare-apps-pca4} normalizes energy results to the \emph{race-to-idle} heuristic (dashed line).
-On average across all four applications, energy consumption is reduced by 19.3\%.
+On average across all four applications, energy consumption is reduced by 19.3\%, with 38.5\% lower average power and a 31.3\% increase in runtime.
 
 {
 \PAD
@@ -359,7 +359,7 @@ On average across all four applications, energy consumption is reduced by 19.3\%
 }
 
 To demonstrate how energy savings are achieved, \figref{ts-hipmer-dvfs} runs \app{HipMer} in the \emph{race-to-idle} heuristic, and although the runtime is short, the high power also results in poor energy consumption.
-In contrast, \figref{ts-hipmer-all-et} demonstrates running with the ET classifier---significantly lower power results in nearly 20\% less energy consumption in total, despite the increase in runtime.
+\figref{ts-hipmer-all-et} runs with the ET classifier---significantly lower power results in nearly 20\% less energy consumption in total, despite the increase in runtime.
 
 
 % \vfill\null
@@ -387,7 +387,7 @@ In contrast, \figref{ts-hipmer-all-et} demonstrates running with the ET classifi
 
 Optimizing for energy efficiency reduces the cost per scientific insight.
 Mapping low-level features to energy-efficient system settings is hard, though---of the 15 classifiers we explored, only a handful are up to the task.
-Extrapolating from our results, maximizing energy efficiency could \emph{increase the total throughput of a hardware over-provisioned, power-constrained cluster by up to 40\%.}
+Extrapolating from our results, maximizing energy efficiency could \emph{increase the total throughput of a hardware over-provisioned, power-constrained cluster by up to 24\%.}
 
 
 \color{DarkSlateGray} % Set the color back to DarkSlateGray for the rest of the content
